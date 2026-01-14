@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qrcode Generator</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2" />
+    <link
+      rel="stylesheet"
+      href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+    />
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+  </head>
+  <body>
+    <!-- ===== HEADER START ===== -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">QR<span>Maker</span></div>
+        <ul class="nav-links">
+          <li><a href="{%url 'QRCODEAPP:home' %}">Home</a></li>
+          <li><a href="{%url 'QRCODEAPP:home' %}">How It Works</a></li>
+          <li><a href="{% url 'QRCODEAPP:contactus' %}">Contact</a></li>
+          <li>
+            <a href="{% url 'QRCODEAPP:qrcode_generator' %}" class="btn"
+              >Generate QR</a
+            >
+          </li>
+        </ul>
+
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+      </nav>
+    </header>
+    <!-- ===== HEADER END ===== -->
+    {% block content %} {% endblock %}
+    <!-- ===== FOOTER START ===== -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>QR Maker</h3>
+          <p>Generate fast, secure, and customizable QR codes for free.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how">How It Works</a></li>
+            <li><a href="#Generate">Generate QR</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: sridharchakkaravarthy@gmail.com</p>
+          <p>Designed with ❤️ in India</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 QR Maker — All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- ===== FOOTER END ===== -->
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenu = document.getElementById("mobile-menu");
+      const navLinks = document.querySelector(".nav-links");
+
+      mobileMenu.addEventListener("click", () => {
+        navLinks.style.display =
+          navLinks.style.display === "flex" ? "none" : "flex";
+      });
+    </script>
+  </body>
+</html>

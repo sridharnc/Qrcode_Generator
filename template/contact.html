@@ -1,0 +1,29 @@
+{% extends 'headerandfooter/base.html' %} {% load static %} {% block content %}
+
+<!---------=====contact-form========------------->
+<h2 style="text-align: center; color: #0a84ff">Contact Us</h2>
+<div style="display: flex; justify-content: center">
+  <div class="form-contact-container">
+    <div class="form-contact">
+      <form method="POST">
+        {% csrf_token %}
+
+        <label>Name</label><br />
+        <input type="text" name="name" required /><br /><br />
+
+        <label>Email</label><br />
+        <input type="email" name="email" required /><br /><br />
+
+        <label>Message</label><br />
+        <textarea name="message" rows="4" required></textarea><br /><br />
+
+        <button type="submit">Send</button>
+
+        {% if msg %}
+        <p style="color: green">{{ msg }}</p>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

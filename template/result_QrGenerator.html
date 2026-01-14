@@ -1,0 +1,14 @@
+{% extends "headerandfooter/base.html" %} {% block content%}
+<!---- ================== QRCODE RESULT  ====================-->
+<div class="container mt-5 align-items-center text-center">
+  <h2>{{ NAME }}</h2>
+  <img src="{{ qrurl }}" alt="QR Code" style="border: 1px solid black" ; />
+  <div>
+    <a href="{{ qrurl }}" class="btn btn-primary mt-3 mb-2" download="filename">
+      Download
+    </a>
+    <br />
+    <small> Thank for using this tool,Come Again ❤️ </small>
+  </div>
+</div>
+{% endblock %}

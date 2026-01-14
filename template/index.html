@@ -1,0 +1,33 @@
+{% extends 'headerandfooter/base.html' %} {% load static %} {% block content %}
+
+<!-- ====== Main Content Display =======-->
+<div class="main-content">
+  <div class="main-content-text">
+    <h3>Create <span style="color: #0a84ff">QR Codes Instantly</span></h3>
+    <p style="font-size: 20px">
+      Generate high-quality QR codes for links,resturant menu, business details,
+      or anything you want — fast, simple, and free. No sign-up required.
+      Unlimited usage.
+    </p>
+    <a href="{% url 'QRCODEAPP:qrcode_generator' %}"
+      ><button>Generate Now</button></a
+    >
+  </div>
+  <div class="image-display-container">
+    <div class="image-container">
+      <img src="{% static 'images/qr-code.png' %}" />
+    </div>
+  </div>
+</div>
+<!------============ Custom Content==================-->
+<script>
+  // Mobile Menu Toggle
+  const mobileMenu = document.getElementById("mobile-menu");
+  const navLinks = document.querySelector(".nav-links");
+
+  mobileMenu.addEventListener("click", () => {
+    navLinks.style.display =
+      navLinks.style.display === "flex" ? "none" : "flex";
+  });
+</script>
+{% endblock %}
